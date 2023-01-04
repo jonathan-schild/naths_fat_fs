@@ -54,3 +54,7 @@ The root directory starts at the first cluster.
 | 29 - 32  | ---  | Start cluster of content
 | 33 - 38  | ---  | Length in Bytes
 | 39 - 63  | ---  | Name (padded with \0)
+
+## The FAT, Directory and the Inode
+
+The Linux Virtual File System (VFS) is an abstraction layer between the actual File System and userspace. The VFS uses Inodes (index-nodes) to work with files, directories and their meta-data. The Inode number identifies as file or directory uniquely (per file system). To be able to use FUSE to mount this file system we must provide the FUSE Kernel Driver unique Inodes for every directory or file. The nearest equivalent to an Inode is a Directory Entry. It can be uniquely identified by the cluster and offset in that cluster.
