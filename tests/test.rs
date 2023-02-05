@@ -16,6 +16,7 @@ fn test() {
         .read(true)
         .write(true)
         .truncate(true)
+        .create(true)
         .open(Path::new("test.hex"))
         .unwrap();
 

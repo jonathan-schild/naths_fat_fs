@@ -146,7 +146,7 @@ where
 
                 // TODO
 
-                reply.data(b"hello\0");
+                reply.data(b"hello\n");
             }
             _ => reply.error(ENOENT),
         };
